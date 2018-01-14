@@ -18,6 +18,12 @@ $(document).ready(function() {
 	checkmark.css({display: "none"});
 	curr_phrase.text(gestures[gesture_index]);
 
+	var video = document.getElementById('hand_gif');
+	var source = document.getElementById('gif_source');
+	source.setAttribute('src',"assets/" + gestures[gesture_index] + ".mp4" );
+	video.load();
+	video.play();
+
 	// User would like to move to the next gesture
 	next_phrase.on("click", function() {
 		console.log(gesture_index);
@@ -25,8 +31,19 @@ $(document).ready(function() {
 		$("#check_box").fadeOut("slow");
 		$("#percent").text("0% Accuracy");
 
+		setTimeout(function() {
+			video.pause();
+			source.setAttribute('src',"assets/" + gestures[gesture_index] + ".mp4" );
+
+			video.load();
+			video.play();
+
+		}, 200);
+
+
 		if (gesture_index < gestures.length - 1) {
 			curr_phrase.text(gestures[gesture_index]);
+
 		} else if (gesture_index == gestures.length-1) {
 			// Display to the user that you are done and can start over!
 			curr_phrase.text(gestures[gesture_index]);
