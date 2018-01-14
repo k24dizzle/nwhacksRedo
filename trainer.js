@@ -4,11 +4,13 @@ $(document).ready(function() {
 	var button = $('#button');
 	var trigger = $('#trigger');
 	function open (evt)  { menu.animate({right: 0}); button.html('CLOSE'); trigger.html('LEFT TRIGGERED');}
-	function close (evt) { menu.animate({right: -400}); button.html('OPEN'); trigger.html('RIGHT TRIGGERED');}	
+	function close (evt) { menu.animate({right: -400}); button.html('OPEN'); trigger.html('RIGHT TRIGGERED');}
 	button.click(function ()  { if (menu.css('right') == '0px') { close(); } else { open(); }  });
-	var trainer = new LeapTrainer.Controller({hitThreshold: 0.6}); 
+	var trainer = new LeapTrainer.Controller({hitThreshold: 0.6});
 	var gestures = [
-		"left"
+		"left",
+		"yes",
+		"no"
 	]
 
 	for (var i = 0; i < gestures.length; i++) {
