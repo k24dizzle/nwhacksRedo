@@ -34,6 +34,11 @@ $(document).ready(function() {
 		setTimeout(function() {
 			video.pause();
 			source.setAttribute('src',"assets/" + gestures[gesture_index] + ".mp4" );
+			if(gestures[gesture_index]=="hello" || gestures[gesture_index] == "left"){
+				$("#hand_gif").css("margin-top","0");
+			} else {
+				$("#hand_gif").css("margin-top","-113px");
+			}
 
 			video.load();
 			video.play();
