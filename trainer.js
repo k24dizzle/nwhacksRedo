@@ -25,7 +25,8 @@ $(document).ready(function() {
 		}
 	});
 
-	var trainer = new LeapTrainer.Controller({hitThreshold: 0.6});
+	var trainer = new LeapTrainer.Controller({controller: control, hitThreshold: 0.6});
+	control.connect();
 
 	for (var i = 0; i < gestures.length; i++) {
 		$.getJSON("data/" + gestures[i] + ".json", function(data) {
