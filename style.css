@@ -1,11 +1,120 @@
-h1 {
-	color: blue;
+@font-face {
+    font-family: BebasNeue;
+    src: url('../fonts/BebasNeue Regular.otf');
 }
 
-#menu { 
-	width: 100%; 
-	height: 100%; 
-	position: absolute; 
-	right: -400px; 
-	overflow-y: scroll; 
+h1 {
+	font-size: 64px;
+}
+
+.button {
+	font-size: 36px;
+	font-family: "Pragati Narrow", sans-serif;
+	border: 2px solid #212121;
+	display: inline-block;
+	clear: both;
+	padding: 10px 30px;
+	margin-top: 20px;
+	transition: all 0.2s ease;
+}
+
+.button:hover {
+	cursor: pointer;
+	background: #212121;
+	color: white;
+}
+
+#menu {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	right: -400px;
+	overflow-y: scroll;
+}
+
+#landing_container {
+	width: 100vw;
+	height: 100vh;
+	background-color: #212121;
+	display: flex;
+
+	/* display: none; */
+}
+
+#landing_hands {
+	margin: auto;
+}
+
+#landing_hands > * {
+
+}
+
+#landing_title_container {
+	font-family: "BebasNeue", sans-serif;
+	font-size: 96px;
+	color: white;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+}
+
+#landing_title {
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#landing_cta {
+	font-family: "Pragati Narrow", sans-serif;
+	font-size: 36px;
+	border-color: white;
+}
+
+#landing_cta:hover {
+	background: white;
+	color: #212121;
+}
+
+#demo_container {
+	display: none;
+}
+
+#gif_container {
+	text-align: center;
+	background-color: white;
+	display: flex;
+}
+
+.parent_container {
+	height: 100vh;
+}
+
+#curr_phrase {
+	text-transform: capitalize;
+	margin-bottom: 70px;
+	margin-top: 0;
+}
+
+.title_name {
+	font-family: "BebasNeue", san-sans-serif;
+}
+
+#hand_gif {
+	width: auto;
+	margin-bottom: 70px;
+}
+
+#continue {
+	font-size: 24px;
+	font-family: "Pragati Narrow", sans-serif;
+}
+
+#live_container {
+	background-color: #212121;
+	text-align: center;
+}
+
+#accuracy {
+	color: white;
+	position: absolute;
+	bottom: 150px;
+	left: 50%;
 }

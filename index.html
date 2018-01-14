@@ -9,17 +9,53 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="trainer.js"> </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet">
     	<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<h1> Leap </h1>
+		<!-- <h1> Leap </h1>
 		<a id="button" class="btn btn-default"> OPEN </a>
-		<h3 id="trigger"> Triggered: </h3> 
+		<h3 id="trigger"> Triggered: </h3>
 		<div id="menu">
 			<ul id="list">
-				<h3> BAAAAAAAA </h3>		
+				<h3> BAAAAAAAA </h3>
 			</ul>
+		</div> -->
+
+		<div id="landing_container">
+			<div id="landing_hands"><img id="hand_gif" src="assets/hands.png"/></div>
+			<h1 id="landing_title_container">
+				<div style="position: relative; left: -50%; text-align: center;">
+					<p id="landing_title">
+						Leap Motion ASL
+					</p>
+					<div class="button" id="landing_cta">begin</div>
+				</div>
+			</h1>
 		</div>
+
+		<div class="container-fluid" id="demo_container">
+			<div class="row">
+				<div class="col-sm-5 parent_container" id="gif_container">
+					<div style="margin: auto;">
+						<h1 class="title_name" id="curr_phrase">"What is your name?"</h1>
+						<img id="hand_gif" src="assets/hands.png"/>
+						<br />
+						<span id="continue">continue to the next phrase</span>
+						<br />
+						<div class="button" id="next_phrase">"how are you doing?"</div>
+					</div>
+				</div>
+				<div class="col-sm-7 parent_container" id="live_container">
+					<div>canvas</div>
+					<h1 class="title_name" id="accuracy">
+						<span style="position: relative; left: -50%;">67% Accuracy</span>
+					</h1>
+				</div>
+			</div>
+		</div>
+
+
 	</body>
 
 
