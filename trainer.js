@@ -30,10 +30,10 @@ $(document).ready(function() {
 	trainer.on("gesture-unknown", function(hit, gestureName) {
 		result = "";
 
-		// Sort the values by the probability value
-		hit = hit.sort(function(a, b) {
-			return a[Object.keys(a)[0]] < b[Object.keys(b)[0]];
-		});
+		// // Sort the values by the probability value
+		// hit = hit.sort(function(a, b) {
+		// 	return a[Object.keys(a)[0]] < b[Object.keys(b)[0]];
+		// });
 
 		trigger.empty();
 		trigger.append("Gesture Unknown: <ul>");
