@@ -14,7 +14,8 @@
 <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet">
 		<script src="leap.playback-0.2.1.min.js"></script>
 		<script src="trainer.js"> </script>
-    	<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut icon" href="favicon.ico" />
 	</head>
 	<body>
 		<!-- <h1> Leap </h1>
@@ -57,12 +58,14 @@
 						<script>
 						var control = Leap.loop({})
 							.use('playback', {
-								recording: 'waiting-short.json.lz',
+								recording: 'three-claps.json.lz',
 								requiredProtocolVersion: 6,
 								pauseOnHand: true,
 								loop: true
 							})
-							.use('riggedHand');
+							.use('riggedHand', {
+								scale: 1
+							});
 						
 						window.controller = Leap.loopController;
 						</script>
