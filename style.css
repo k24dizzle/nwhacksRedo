@@ -179,3 +179,10 @@ canvas {
   }
 }
 
+#check_box {
+	height: 60px;
+	bottom: 90px;
+	left: 50%;
+	position: absolute;
+}
+

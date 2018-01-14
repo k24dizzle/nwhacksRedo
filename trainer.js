@@ -10,13 +10,13 @@ $(document).ready(function() {
 	]
 	var next_phrase = $("#next_phrase");
 	var checkmark = $(".checkmark");
-	checkmark.css({visibility: "hidden"});
+	checkmark.css({display: "none"});
 	next_phrase.text(gestures[gesture_index]);
 
 	// User would like to move to the next gesture
 	next_phrase.on("click", function() {
 		gesture_index++;
-		checkmark.css({visibility: "hidden"});
+		checkmark.css({display: "none"});
 		if (gesture_index < gestures.length) {
 			next_phrase.text(gestures[gesture_index]);
 		} else if (gesture_index == gestures.length) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
 		var current = gestures[gesture_index];
 		current = current.toUpperCase();
 		if (hit[current] >= 0.60) {
-			checkmark.css({visibility: ""});
+			checkmark.css({display: ""});
 		}
 		$("#percent").text(Math.round(hit[current] * 100) + "% Accuracy");
 	});
