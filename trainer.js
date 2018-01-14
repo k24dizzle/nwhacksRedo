@@ -29,16 +29,19 @@ $(document).ready(function() {
 
 	trainer.on("gesture-unknown", function(hit, gestureName) {
 		result = "";
+		var sortable = [];
+		for (var key in hit) {
+			sortable.push([key, hit[key]]);
+		}
 
-		// // Sort the values by the probability value
-		// hit = hit.sort(function(a, b) {
-		// 	return a[Object.keys(a)[0]] < b[Object.keys(b)[0]];
-		// });
+		sortable.sort(function(a, b) {
+			return a[1] - b[1];
+		})
 
 		trigger.empty();
 		trigger.append("Gesture Unknown: <ul>");
-		for (var key in hit) {
-			trigger.append("<li> " + key + " " + hit[key] + "</li>");
+		for (var key in sortable) {
+			trigger.append("<li> " + key + " " + sortable[key] + "</li>");
 		}
 		trigger.append("</ul>");
 	});
