@@ -3,6 +3,10 @@
     src: url('../fonts/BebasNeue Regular.otf');
 }
 
+body {
+	overflow: hidden;
+}
+
 h1 {
 	font-size: 64px;
 }
@@ -47,6 +51,10 @@ h1 {
 
 #landing_hands > * {
 
+}
+
+#landing_hand_gif {
+	height: 100vh;
 }
 
 #landing_title_container {
@@ -97,9 +105,15 @@ h1 {
 	font-family: "BebasNeue", san-sans-serif;
 }
 
+#video_crop_container {
+	height: 455px;
+	width: 555px;
+	overflow: hidden;
+}
+
 #hand_gif {
-	width: auto;
-	margin-bottom: 70px;
+	width: 100%;
+	margin-top: -113px;
 }
 
 #continue {
@@ -185,4 +199,3 @@ canvas {
 	left: 50%;
 	position: absolute;
 }
-
