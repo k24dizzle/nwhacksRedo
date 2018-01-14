@@ -141,6 +141,7 @@ canvas {
 
 .checkmark {
   left: -50%;
+  margin-left: -28px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -148,7 +149,6 @@ canvas {
   stroke-width: 2;
   stroke: #fff;
   stroke-miterlimit: 10;
-  /* margin: 10% auto; */
   box-shadow: inset 0px 0px 0px #7ac142;
   animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
