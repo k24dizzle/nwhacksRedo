@@ -16,7 +16,7 @@ $(document).ready(function() {
 	var next_phrase = $("#next_phrase");
 	var checkmark = $(".checkmark");
 	checkmark.css({display: "none"});
-	curr_phrase.text(gestures[gesture_index]);
+	curr_phrase.text("\"" +gestures[gesture_index]+"\"");
 
 	var video = document.getElementById('hand_gif');
 	var source = document.getElementById('gif_source');
@@ -26,7 +26,6 @@ $(document).ready(function() {
 
 	// User would like to move to the next gesture
 	next_phrase.on("click", function() {
-		console.log(gesture_index);
 		gesture_index++;
 		$("#check_box").fadeOut("slow");
 		$("#percent").text("0% Accuracy");
@@ -47,15 +46,15 @@ $(document).ready(function() {
 
 
 		if (gesture_index < gestures.length - 1) {
-			curr_phrase.text(gestures[gesture_index]);
+			curr_phrase.text("\"" +gestures[gesture_index]+"\"");
 
 		} else if (gesture_index == gestures.length-1) {
 			// Display to the user that you are done and can start over!
-			curr_phrase.text(gestures[gesture_index]);
+			curr_phrase.text("\"" +gestures[gesture_index]+"\"");
 			next_phrase.text("Start Over!");
 		} else {
 			gesture_index = 0;
-			curr_phrase.text(gestures[gesture_index]);
+			curr_phrase.text("\"" +gestures[gesture_index]+"\"");
 			next_phrase.text("continue");
 		}
 	});
