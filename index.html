@@ -4,22 +4,22 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Leap</title>
 		<script src="leaptrainer.min.js"></script>
-		<script src="//js.leapmotion.com/leap-0.6.4.js"></script>
-		<script src="three.min.js"></script>		
+		<script src="//js.leapmotion.com/leap-0.6.4.min.js"></script>
+		<script src="three.min.js"></script>
 		<script src="//js.leapmotion.com/leap-plugins-0.1.11.js"></script>
 		<script src="//js.leapmotion.com/leap.rigged-hand-0.1.4.js"></script>
 		<script src="script.js"> </script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="trainer.js"> </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet">
 		<script src="leap.playback-0.2.1.min.js"></script>
+		<script src="trainer.js"> </script>
     	<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<!-- <h1> Leap </h1>
 		<a id="button" class="btn btn-default"> OPEN </a>
-		<h3 id="trigger"> Triggered: </h3> 
+		<h3 id="trigger"> Triggered: </h3>
 		<h4 id="match"> Match: </h4>
 		<div id="menu">
 			<ul id="list">
@@ -28,7 +28,12 @@
 		</div> -->
 
 		<div id="landing_container">
-			<div id="landing_hands"><img id="hand_gif" src="assets/hands.png"/></div>
+			<div id="landing_hands">
+				<img id="hand_gif" src="assets/hands.png"/>
+				<!-- <video id="landing_hand_gif" autoplay loop>
+					<source src="assets/yes.mp4" type="video/mp4">
+				</video> -->
+			</div>
 			<h1 id="landing_title_container">
 				<div style="position: relative; left: -50%; text-align: center;">
 					<p id="landing_title">
@@ -44,7 +49,12 @@
 				<div class="col-sm-5 parent_container" id="gif_container">
 					<div style="margin: auto;">
 						<h1 class="title_name" id="curr_phrase">"What is your name?"</h1>
-						<img id="hand_gif" src="assets/hands.png"/>
+						<!-- <img id="hand_gif" src="assets/hands.png"/> -->
+						<div id="video_crop_container">
+							<video id="hand_gif" autoplay loop>
+								<source src="assets/yes.mp4" type="video/mp4">
+							</video>
+						</div>
 						<br />
 						<span id="continue">continue to the next phrase</span>
 						<br />
@@ -55,7 +65,7 @@
 					<div>canvas</div>
 					<div>
 						<script>
-						Leap.loop({})
+						var control = Leap.loop({})
 							.use('playback', {
 								recording: 'pinch-57fps.json.lz',
 								requiredProtocolVersion: 6,
@@ -63,7 +73,7 @@
 								loop: true
 							})
 							.use('riggedHand');
-						
+
 						window.controller = Leap.loopController;
 						</script>
 						<style>
@@ -73,9 +83,14 @@
 							}
 						</style>
 					</div>
-					<h1 class="title_name" id="accuracy">
-						<span style="position: relative; left: -50%;">67% Accuracy</span>
-					</h1>
+					<div class="title_name" id="accuracy">
+						<h1>
+							<span id="percent" style="position: relative; left: -50%;">Place hand over Leap Motion</span>
+						</h1>
+					</div>
+					<div id="check_box">
+						<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+					</div>
 				</div>
 			</div>
 		</div>
