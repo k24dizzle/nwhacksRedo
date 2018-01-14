@@ -4,16 +4,20 @@ $(document).ready(function() {
 	// Add gestures here! Important if you add the JSON make sure you add the
 	// gesture name in this array!
 	var gestures = [
-		"left",
+		"up",
 		"yes",
-		"no"
+		"no",
+		"left"
 	]
 	var next_phrase = $("#next_phrase");
+	var checkmark = $(".checkmark");
+	checkmark.css({display: "none"});
 	next_phrase.text(gestures[gesture_index]);
 
 	// User would like to move to the next gesture
 	next_phrase.on("click", function() {
 		gesture_index++;
+		$("#check_box").fadeOut("slow");
 		if (gesture_index < gestures.length) {
 			next_phrase.text(gestures[gesture_index]);
 		} else if (gesture_index == gestures.length) {
@@ -44,6 +48,10 @@ $(document).ready(function() {
 	trainer.on("gesture-unknown", function(hit, gestureName) {
 		var current = gestures[gesture_index];
 		current = current.toUpperCase();
+		if (hit[current] >= 0.50) {
+			$("#check_box").css({display: ""});
+			checkmark.css({display: ""});
+		}
 		$("#percent").text(Math.round(hit[current] * 100) + "% Accuracy");
 	});
 });

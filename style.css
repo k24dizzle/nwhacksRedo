@@ -178,3 +178,11 @@ canvas {
     box-shadow: inset 0px 0px 0px 30px #7ac142;
   }
 }
+
+#check_box {
+	height: 60px;
+	bottom: 90px;
+	left: 50%;
+	position: absolute;
+}
+
