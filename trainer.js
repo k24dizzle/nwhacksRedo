@@ -4,14 +4,14 @@ $(document).ready(function() {
 	// Add gestures here! Important if you add the JSON make sure you add the
 	// gesture name in this array!
 	var gestures = [
-		"up",
 		"yes",
 		"no",
+		"thank you",
+		"up",
 		"left",
-		"please",
 		"hello"
 	]
-	
+
 	var curr_phrase = $("#curr_phrase");
 	var next_phrase = $("#next_phrase");
 	var checkmark = $(".checkmark");
