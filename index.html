@@ -58,14 +58,12 @@
 						<script>
 						var control = Leap.loop({})
 							.use('playback', {
-								recording: 'three-claps.json.lz',
+								recording: 'pinch-57fps.json.lz',
 								requiredProtocolVersion: 6,
 								pauseOnHand: true,
 								loop: true
 							})
-							.use('riggedHand', {
-								scale: 1
-							});
+							.use('riggedHand');
 						
 						window.controller = Leap.loopController;
 						</script>
