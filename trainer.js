@@ -4,11 +4,11 @@ $(document).ready(function() {
 	// Add gestures here! Important if you add the JSON make sure you add the
 	// gesture name in this array!
 	var gestures = [
-		"yes",
 		"no",
 		"thank you",
-		"up",
 		"left",
+		"yes",
+		"up",
 		"hello"
 	]
 
