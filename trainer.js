@@ -7,7 +7,9 @@ $(document).ready(function() {
 		"up",
 		"yes",
 		"no",
-		"left"
+		"left",
+		"please",
+		"hello"
 	]
 	var next_phrase = $("#next_phrase");
 	var checkmark = $(".checkmark");
