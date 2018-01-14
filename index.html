@@ -3,13 +3,17 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Leap</title>
-		<script src="http://js.leapmotion.com/leap-0.6.3.min.js"></script>
 		<script src="leaptrainer.min.js"></script>
+		<script src="//js.leapmotion.com/leap-0.6.4.js"></script>
+		<script src="three.min.js"></script>		
+		<script src="//js.leapmotion.com/leap-plugins-0.1.11.js"></script>
+		<script src="//js.leapmotion.com/leap.rigged-hand-0.1.4.js"></script>
 		<script src="script.js"> </script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="trainer.js"> </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet">
+		<script src="leap.playback-0.2.1.min.js"></script>
     	<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -48,6 +52,26 @@
 				</div>
 				<div class="col-sm-7 parent_container" id="live_container">
 					<div>canvas</div>
+					<div>
+						<script>
+						Leap.loop({})
+							.use('playback', {
+								recording: 'pinch-57fps.json.lz',
+								requiredProtocolVersion: 6,
+								pauseOnHand: true,
+								loop: true
+							})
+							.use('riggedHand');
+						
+						window.controller = Leap.loopController;
+						</script>
+						<style>
+							#connect-leap {
+								display: none !important;
+								cursor: default !important;
+							}
+						</style>
+					</div>
 					<h1 class="title_name" id="accuracy">
 						<span style="position: relative; left: -50%;">67% Accuracy</span>
 					</h1>

@@ -110,6 +110,7 @@ h1 {
 #live_container {
 	background-color: #212121;
 	text-align: center;
+	display: flex;
 }
 
 #accuracy {
@@ -117,4 +118,11 @@ h1 {
 	position: absolute;
 	bottom: 150px;
 	left: 50%;
+}
+
+canvas {
+	margin: auto;
+	position: relative !important;
+	display:none;
+	height: auto !important;
 }
